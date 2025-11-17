@@ -17,6 +17,7 @@ public class WebSocketEvenListner {
     private final SimpMessageSendingOperations messagingTemplate;
 
     @EventListener
+    // to notifikuje  czy ktos wychodzi z pokoju
     public void handleWebSocketDisconnectListener(SessionDisconnectEvent event) {
         StompHeaderAccessor headerAccessor = StompHeaderAccessor.wrap(event.getMessage());
         String username = headerAccessor.getSessionAttributes().get("username").toString();

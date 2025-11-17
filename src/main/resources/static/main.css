@@ -2,6 +2,11 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+
+}
+
+body {
+
 }
 
 html,body {
@@ -16,8 +21,8 @@ body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 1rem;
     line-height: 1.58;
-    color: #333;
-    background-color: #f4f4f4;
+    background: #1f1f1f;
+    color: wheat;
     height: 100%;
 }
 
@@ -76,21 +81,21 @@ button {
 }
 
 button.default {
-    background-color: #e8e8e8;
-    color: #333;
+    background: #1f1f1f;
+    color: wheat;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12);
 }
 
 button.primary {
     background-color: #6db33f;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12);
-    color: #fff;
+    color: wheat;
 }
 
 button.accent {
     background-color: #6db33f;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12);
-    color: #fff;
+    color: wheat;
 }
 
 #username-page {
@@ -98,7 +103,7 @@ button.accent {
 }
 
 .username-page-container {
-    background: #fff;
+    background: #1f1f1f;
     box-shadow: 0 1px 11px rgba(0, 0, 0, 0.27);
     border-radius: 2px;
     width: 100%;
@@ -131,7 +136,7 @@ button.accent {
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
-    background-color: #fff;
+    background: #1f1f1f;
     box-shadow: 0 1px 11px rgba(0, 0, 0, 0.27);
     margin-top: 30px;
     height: calc(100% - 60px);
@@ -141,7 +146,7 @@ button.accent {
 
 #chat-page ul {
     list-style-type: none;
-    background-color: #FFF;
+    background: #1f1f1f;
     margin: 0;
     overflow: auto;
     overflow-y: scroll;
@@ -237,6 +242,11 @@ button.accent {
     position: absolute;
     top: 65px;
     width: 100%;
+}
+
+input{
+    background: gray;
+    color: white;
 }
 
 

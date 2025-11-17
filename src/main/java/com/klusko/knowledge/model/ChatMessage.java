@@ -13,4 +13,5 @@ public class ChatMessage {
     private String content;
     private String sender;
     public MessageType type;
+    private  String room;
 }
