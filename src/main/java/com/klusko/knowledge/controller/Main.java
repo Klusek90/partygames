@@ -24,6 +24,11 @@ public class Main {
         return "main";
     }
 
+    @GetMapping("/task")
+    public String task() {
+        return "task";
+    }
+
     @GetMapping("/room/{roomNumber}")
     public String roomPage(@PathVariable String roomNumber, Model model) {
         model.addAttribute("roomNumber", roomNumber);

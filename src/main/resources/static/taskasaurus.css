@@ -1,0 +1,530 @@
+/***********/
+/* general */
+/***********/
+
+.invisible {
+    display: none;
+}
+/*
+positioning
+ */
+
+body {
+    padding-top: 110px;
+}
+.top-buffer {
+    margin-top: 10px;
+}
+.bottom-buffer {
+    margin-bottom: 20px;
+}
+.position-relative {
+    position: relative;
+}
+.position-absolute {
+    position: absolute;
+}
+.top6 {
+    top: 6px;
+}
+.top12 {
+    top: 12px;
+}
+.right-12 {
+    right: -12px;
+}
+dl > dd {
+    padding-bottom: 9px;
+}
+
+/*
+colouring
+ */
+
+.grey {
+    color: grey;
+}
+pre {
+    background: white;
+}
+
+/*
+texting
+ */
+
+.jumbo {
+    text-align: center;
+    font-size: 63px;
+}
+a.jumbo:hover {
+    text-decoration: none;
+}
+.help {
+    font-size: small;
+    color: gray;
+}
+
+/*edit icon
+*/
+
+ .glyphicon1 {
+     position: relative;
+     top: 1px;
+     display: inline-block;
+     font-family: 'Glyphicons Halflings';
+     font-style: normal;
+     font-weight: 400;
+     line-height: 1;
+     cursor: pointer;
+     color: #337ab7;
+ }
+ .glyphicon1:hover {
+    color: #094C83;
+ }
+
+
+
+/*
+/*************/
+/* specifics */
+/*************/
+
+/*
+navbar
+ */
+
+.navbar-narrow {
+    padding-left: 2px;
+    padding-right: 2px;
+}
+.navbar-fixed-top-2 {
+    top: 50px;
+    z-index: 10;
+}
+.navbar-collapse {
+    z-index: 100;
+}
+
+/*
+tasks - there's lots of these
+ */
+
+.task-day-0 {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+.task-day-1 {
+    color: #8a6d3b;
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+}
+.task-day-2 {
+    color: #614d29;
+    background-color: #f5eaa7;
+    border-color: #f4d695;
+}
+.task-day-3 {
+    color: #804000;
+    background-color: #ff8040;
+    border-color: #ff8000;
+}
+.task-day-4 {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+.task-day-5 {
+    color: #632827;
+    background-color: #ce8282;
+    border-color: #c97681;
+}
+.task-day-null {
+    color: #31708f;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+}
+.task-hover:hover {
+    border-color: #f0f0f0;
+    box-shadow: 0 0 16px grey;
+    cursor: pointer;
+    z-index: 100;
+}
+.truncate60 {
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: top;
+    white-space: nowrap;
+    max-width: 60%;
+}
+.truncate50 {
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: top;
+    white-space: nowrap;
+    max-width: 50%;
+}
+a.list-group-item {
+    padding: 6px 8px;
+    border: 6px solid white;
+    border-radius: 12px;
+}
+#todragbyhandle a {
+    margin-left: 10%;
+}
+#todragbyanything a {
+    margin-left: 10%;
+}
+.invisihandle {
+    position: absolute;
+    top: 0px;
+    left: -1em;
+    z-index: 5;
+    font-size: 45pt;
+    color: red;
+    background-color: red;
+    opacity: 0;
+    line-height: 1.125em;
+}
+.task_handle {
+    position: absolute;
+    top: 1.25em;
+    left: 14px;
+}
+.task_title_L, .task_title_S {
+    width: 90%;
+}
+.task_title_L.noduedate,.task_title_S.noduedate {
+    margin-top: -2px;
+    margin-left: -2px;
+    margin-bottom: 10px;
+}
+.task_title_L.hasduedate,.task_title_S.hasduedate {
+    margin-top: -2px;
+    margin-bottom: 10px;
+}
+.task_title_L.hasduedate {
+    margin-left: -2px;
+}
+.task_title_S.hasduedate {
+    margin-left: -2px;
+}
+.task_duedate {
+    top: 6mm;
+    text-align: right;
+    left: -111px;
+    position: absolute;
+    max-height: 1.5em;
+    /*    font-size: 0%;*/
+    background-color: #d9534f;
+}
+.task_avatar {
+    border-radius: 80%;
+    max-width:24px;
+    max-height:22px;
+}
+.task_authoravatar .task_avatar {
+    position: absolute;
+    top: 0px;
+    left: -80px;
+    border-radius: 80%;
+    max-width:52px;
+    max-height:50px;
+}
+#searchanddrag .todragbyhandle {
+    padding-left: 6%;
+}
+/*
+.task_authoravatar.hasduedate.hidden-xs.hidden-sm {
+    position: absolute;
+    left: 45px;
+    border-radius: 80%;
+    max-width: 6px;
+    max-height: 2px;
+}
+.task_authoravatar.hasduedate.hidden-md.hidden-lg {
+    position: absolute;
+    top: 6px;
+    left: 48px;
+}
+*/
+.task_authoravatar.noduedate {
+    position: absolute;
+    top: 6px;
+    left: 16px;
+}
+
+.glyphicon-briefcase:hover{
+
+}
+.task_authorinitials {
+    position: absolute;
+    top: 6mm;
+    text-align: right;
+    left: -55px;
+}
+.task_hoursremaining {
+    font-size: 96%;
+    position: absolute;
+    top: 3px;
+    right: 4px;
+    font-weight:bold;
+    float:right;
+}
+.task_number_L,.task_number_S {
+    position: relative;
+    font-weight: bold;
+    left: -4px;
+    bottom: -3px;
+    margin-top: -0.5em;
+}
+.task_number_L.isnull,.task_number_S.isnull {
+    position: absolute;
+    font-weight: bold;
+    left: 4px;
+    bottom: 3px;
+}
+.task_tags.isnull {
+    position: absolute;
+}
+.task_tags.isnotnull {
+    margin-left: 4em;
+    /*    padding-left: 8%;*/
+    display: flex;
+    flex-direction: row;
+    /*font-size: 1.25em;*/
+    bottom: 4px;
+}
+.task_tag {
+    margin: 2px;
+    /*position: absolute;*/
+}
+#tasks_tags {
+    flex-flow: wrap;
+}
+.task_workeravatar {
+    position: absolute;
+    right: 6px;
+    bottom: 2px;
+}
+.task_workername {
+    position: absolute;
+    font-style: italic;
+    bottom: 2px;
+}
+.task_workername.isnotnull {
+    right: 42px;
+}
+.task_workername.isnull {
+    right: 8px;
+}
+a#intask_tagsa {
+    text-decoration: none;
+}
+#intask_tags {
+    display: flex;
+    flex-direction: row;
+    font-size: 1.456em;
+    margin-bottom: 12px;
+    flex-flow: wrap;
+}
+.intask_tag {
+    margin: 1px;
+}
+.intask_tagselectcontainer {
+    color:black;
+    padding-bottom: 13px;
+}
+.intask_tag2 span.select2.select2container {
+    color:black;
+    width: 100%;
+}
+/* dragula being dragged*/
+.gu-mirror {
+    box-shadow: 0 0 24px 12px white;
+    cursor: n-resize;
+    z-index: 1000;
+}
+
+/*
+queues
+ */
+
+.queue_legendstatistics {
+    position: fixed;
+    right: 0px;
+}
+.queue_legendstats {
+    position: fixed;
+    right: 0px;
+}
+.queue_legendkey {
+    position: fixed;
+    left: 66%;
+}
+.queue_legendkeyday{
+    padding: 6px 8px;
+    border: 5px solid white;
+    border-radius: 7px;
+}
+
+/*
+views
+ */
+
+.view_slider {
+    position: fixed;
+    left: 66%;
+    width: 400px;
+}
+
+.slidecontainer {
+    width: 100%; /* Width of the outside container */
+}
+
+/* The slider itself */
+.slider {
+    width: 100%; /* Full-width */
+    height: 25px; /* Specified height */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+}
+
+/*
+tags
+ */
+
+.tags_createmodal {
+    display: flex;
+}
+.tag_taskcompletecount {
+    vertical-align: sub;
+    font-size: .83em
+}
+
+/*
+misc
+ */
+
+/* notes */
+.bullet-before:before {
+    content: "\00a0\00b7\00a0";
+}
+
+/* login form */
+.form-signin {
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+.form-est{
+    max-width: 61px;
+    display: block;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* file upload */
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: #222 ;
+    cursor: inherit;
+    display: block;
+}
+
+/************/
+/* _general */
+/************/
+
+/*
+position
+ */
+
+._bottom6 {
+    top: 26px;
+}
+
+._position-relative {
+}
+.markdown p img {
+    max-width: 100%;
+}
+
+.icon {
+    width: 16px;
+    height: 16px;
+    padding: 0;
+    margin: 0;
+    vertical-align: middle;
+}
+
+/* to keep the dropdown styling consistent*/
+.select2-container--bootstrap .select2-dropdown {
+    color:black !important;
+}
+
+.select2-container--bootstrap .select2-selection {
+    color: black !important;
+}
+
+.select2-container--bootstrap .select2-search--dropdown .select2-search__field {
+    color: black !important;
+}
+
+.select2-container--bootstrap .select2-results__option[aria-selected=true] {
+    color:black !important;
+}
+
+.select2-container--bootstrap .select2-results__option--highlighted[aria-selected] {
+    background-color: #337ab7 !important;
+    color: black !important;
+}
+
+.select2-results {
+    color:black!important;
+}
+
+/* to keep the markdown editor dropdown styling consistent*/
+.editor-toolbar a.active,.editor-toolbar a:hover{
+    background:transparent;
+    border-color:#337ab7;
+}
+.editor-toolbar.disabled-for-preview a:not(.no-disable){
+    background:transparent;
+    border-color:transparent;
+}
+
+/* to make the modals stand out more from background*/
+.modal-backdrop {
+    opacity:0.1 !important;
+}
