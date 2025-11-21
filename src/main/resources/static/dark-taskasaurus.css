@@ -1,20 +1,21 @@
-/***********/
-/* general */
-/***********/
 
 
 .invisible {
     display: none;
 }
 
-/*
-positioning
- */
+#main-codemirror{
+    height: 150px;
+    background-color: initial;
+    color: wheat;
+}
+
+#main-codemirror:focus{
+    border-color: wheat;
+}
 
 body {
     padding-top: 110px;
-    /*background-color: black;*/
-    /*color: #f5dea3;*/
 }
 
 .btn-primary {
@@ -38,7 +39,6 @@ body {
     font-weight: 400;
     line-height: 1;
     cursor: pointer;
-    /*color: #00B9F1;*/
     color: white;
 }
 .glyphicon1:hover {
