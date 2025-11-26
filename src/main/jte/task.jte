@@ -9,6 +9,7 @@
    <link rel="stylesheet" href="/taskasaurus.css"/>
    <link rel="stylesheet" href="/bootstrap-clockpicker/bootstrap-clockpicker.min.css"/>
    <link rel="stylesheet" href="/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css"/>
+   <link rel="stylesheet" href="/main.css"/>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap.min.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.1/css/datepicker3.css"/>
@@ -18,6 +19,21 @@
 </head>
 <body style="color: #f5dea3; background-color: #252525;">
 
+<div id="username-page">
+    <div class="username-page-container">
+        <h1 class="title">Type your name</h1>
+        <form id="usernameForm" name="usernameForm">
+            <div class="form-group" style="width: 300px;">
+                <input type="text" id="name" placeholder="Username" autocomplete="off" class="form-control" placeholder="username"/>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary username-submit">Start Chatting</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div id="chat-page" class="hidden">
 <nav class="navbar navbar-inverse navbar-fixed-top" >
   <div class="container">
     <div class="navbar-header">
@@ -126,31 +142,31 @@
       <p>The task is to run a small experiment to see how our WebSockets behave when locked inside the friendly walls of a LAN. Think of it as a local stress-test adventure: we poke the sockets, they (hopefully) poke back, and we observe whether the whole thing stays alive and chatty.</p>
       <p>In short — a quick LAN-side handshake check to make sure our real-time communication doesn’t panic under local conditions. </p>
       <hr style="border-top: 1px solid #eee;">
-      <div style="float: left; margin-right: 1.5%" onclick="dontClickThat('comment')">
+      <div style="float: left; margin-right: 1.5%">
           <input type="checkbox" id="Comments" >
           <span for="Comments">Comments</span>
       </div>
-        <div style="float: left; margin-right: 1.5%" onclick="dontClickThat('attachment')">
+        <div style="float: left; margin-right: 1.5%">
           <input type="checkbox" id="Attachments" >
           <span for="Attachments ">Attachments</span>
         </div>
-        <div style="float: left; margin-right: 1.5%"  onclick="dontClickThat('assign')">
+        <div style="float: left; margin-right: 1.5%">
               <input type="checkbox" id="Assignments">
               <span for="Assignments">Assignments</span>
         </div>
-        <div style="float: left; margin-right: 1.5%"  onclick="dontClickThat('prio')">
+        <div style="float: left; margin-right: 1.5%">
               <input type="checkbox" id="Prioritisations">
               <span for="Prioritisations ">Prioritisations</span>
         </div>
-        <div style="float: left; margin-right: 1.5%"  onclick="dontClickThat('work')">
+        <div style="float: left; margin-right: 1.5%">
               <input type="checkbox" id="Work">
               <span for="Work">Work</span>
         </div>
-        <div style="float: left; margin-right: 1.5%"  onclick="dontClickThat('edit')">
+        <div style="float: left; margin-right: 1.5%">
           <input type="checkbox" id="Edits">
           <span for="Edits">Edits</span>
     </div>
-    <div style="float: left; margin-right: 1.5%" onclick="dontClickThat('auth')">
+    <div style="float: left; margin-right: 1.5%">
           <input type="checkbox" id="Author">
           <span for="Author">Author Changes </span>
     </div >
@@ -159,27 +175,16 @@
     </div>
 
     <div style="clear:both">
-
         <ul id="messageArea">
 
         </ul>
         <form id="messageForm" name="messageForm">
             <div class="form-group">
-                <div class="input-group clearfix">
-<%--                    <textarea id="message" placeholder="Type a message..." autocomplete="off" class="form-control"/>--%>
-                    <button onclick="dontClickThat()" class="btn btn-primary">Submit</button>
-                </div>
+                <a style="color:wheat"  target="_blank" class="help">editing help</a>
+                <textarea id="message" rows="3" class="form-control" placeholder="Comment"></textarea>
+                <button type="submit" class="primary btn btn-primary">Submit</button>
             </div>
         </form>
-
-            <div class="form-group">
-                <a style="color:wheat"  target="_blank" class="help">editing help</a>
-                <textarea id="main-codemirror" rows="3" class="form-control" placeholder="Comment"></textarea>
-            </div>
-            <div class="form-group">
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
-
         <hr style="border-top: 1px solid #eee;">
 
         <footer id="footer">
@@ -187,22 +192,21 @@
         </footer>
     </div>
 </div>
-
-
-
+</div>
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.4/sockjs.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
-<script src="/main.js"></script>
+<script src="/task.js"></script>
 
 <script>
+    const roomNumber = "task";
     let countMe = 0;
     let text = [
         "Dont click that!",
-        "Dont click that .. please",
-        "Seriously? You’re still clicking?",
-        "Ok.. that a bit annoying ..",
+        "Yeah.. its not working so click that .. please",
+        "Seriously? Stop clicking",
+        "Ok.. that is a bit annoying .. its not working , so no point of clicking",
         "Didnt you have training to not click thing around page?",
         "This is your final-final warning. One more click and I will disconnect you."
     ]
@@ -212,7 +216,8 @@
         "Will you stop clicking wierd things?",
         "Are you planning to click everything on the page?",
         "Seriously?.. ",
-        "Omg.. dude .. just relax and enjoy the ride"
+        "Omg.. dude .. just relax and enjoy the ride",
+        "Ok .. I didnt even know there is so many buttons to click..."
     ]
 
     let previous = "";
@@ -233,7 +238,6 @@
 
         console.log(countMe)
     }
-
 
 </script>
 </body>

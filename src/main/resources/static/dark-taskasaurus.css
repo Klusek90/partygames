@@ -4,13 +4,13 @@
     display: none;
 }
 
-#main-codemirror{
+#message{
     height: 150px;
     background-color: initial;
     color: wheat;
 }
 
-#main-codemirror:focus{
+#message:focus{
     border-color: wheat;
 }
 
